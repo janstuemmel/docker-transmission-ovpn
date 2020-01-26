@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    cap_add:
+      - net_admin
+    devices:
+      - /dev/net/tun
+    environment:
+      - TRANSMISSION_PEER_PORT=12345
+    volumes:
+      - ./ovpn:/ovpn
+    ports:
+      - 9091:9091
