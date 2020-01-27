@@ -1,0 +1,13 @@
+{
+  "bind-address-ipv6": "",
+  "download-dir": "/downloads",
+  "incomplete-dir": "/downloads",
+  "peer-port": {{ default .Env.TRANSMISSION_PEER_PORT "51413" }},
+  "port-forwarding-enabled": false,
+  "rpc-authentication-required": {{ if isTrue (default .Env.TRANSMISSION_AUTH "false") }}true{{ else }}false{{ end }},
+  "rpc-host-whitelist-enabled": false,
+  "rpc-password": "{{ default .Env.TRANSMISSION_USERNAME "" }}",
+  "rpc-username": "{{ default .Env.TRANSMISSION_PASSWORD "" }}",
+  "rpc-port": 9091,
+  "rpc-whitelist-enabled": false
+}

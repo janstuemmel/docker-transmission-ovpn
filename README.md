@@ -37,6 +37,12 @@ services:
       # your vpn provider supports
       # static port forwarding
       - TRANSMISSION_PEER_PORT=12345
+      # enable basic auth for transmission
+      - TRANSMISSION_AUTH=true
+      # set a username
+      - TRANSMISSION_USERNAME=userfoo
+      # set a password
+      - TRANSMISSION_PASSWORD=s3cret
       # specify a single ovpn config
       # instead of choosing one randomly
       - OVPN_CONIFG=myconf.ovpn
